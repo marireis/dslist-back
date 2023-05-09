@@ -3,10 +3,14 @@ package com.marina.dslist.entites;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="tb_game")
 public class Game {
 	
 	@Id
@@ -14,6 +18,7 @@ public class Game {
 	private Long id;
 	private String title;
 	
+	@Column(name="game_year")//palavra reservada do sql no bd, alterar o nome do campo no banco
 	private Integer year;
 	private String genre;
 	private String platforms;
@@ -22,8 +27,7 @@ public class Game {
 	private String shortDescription;
 	private String longDescription;
 	
-	public Game() {
-		
+	public Game() {	
 	}
 
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
